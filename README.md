@@ -31,4 +31,5 @@ so that it speeds up deployment process.
 - Slider **Works** both on desktop and mobile. 
 
 - Since there was no specification about images themselves, it was decided to load static images. 
+- in branch **version** all images are fetched from [www.unsplash.com](www.unsplash.com) 
 
