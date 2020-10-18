@@ -51,6 +51,7 @@ const Slider = ({ hits }) => {
             <i className="fas fa-angle-double-right"></i>
           </button>
         </div>
+        <hr />
 
         <div className="dotWrapper">
           {hits.map((url, idx) => (

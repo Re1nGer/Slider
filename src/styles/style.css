@@ -126,7 +126,7 @@ img {
   color: aquamarine;
 }
 
-.lds-dual-ring {
+.loading {
   position: absolute;
   top: 50%;
   left: 45%;
@@ -134,7 +134,7 @@ img {
   width: 80px;
   height: 80px;
 }
-.lds-dual-ring:after {
+.loading:after {
   content: " ";
   display: block;
   width: 64px;
@@ -143,9 +143,9 @@ img {
   border-radius: 50%;
   border: 6px solid #fff;
   border-color: #fff transparent #fff transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
+  animation: loader-dual-ring 1.2s linear infinite;
 }
-@keyframes lds-dual-ring {
+@keyframes loader-dual-ring {
   0% {
     transform: rotate(0deg);
   }
@@ -191,5 +191,19 @@ img {
   .searchWrapper {
     left: 30%;
     top: 90%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .dotWrapper {
+    display: none;
+  }
+
+  .checkBoxWrapper {
+    display: none;
+  }
+
+  .slider {
+    overflow-x: scroll;
   }
 }
