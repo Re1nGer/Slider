@@ -18,7 +18,7 @@ body {
 
 .slide {
   min-width: 100%;
-  height: 100%;
+  height: 95%;
   scroll-snap-align: start;
   transition: 0.5s ease;
   display: flex;
@@ -90,6 +90,38 @@ img {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+.searchWrapper {
+  display: flex;
+  position: absolute;
+  left: 80%;
+  top: 93%;
+}
+
+.searchWrapper input {
+  border-radius: 1.5rem;
+  border: none;
+  background-color: #2b2d2e;
+  outline: none;
+  color: #bbb;
+}
+.searchWrapper input::placeholder {
+  padding: 0.5rem;
+}
+
+.searchWrapper button {
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  position: absolute;
+  background-color: #2b2d2e;
+  right: 0.25rem;
+}
+
+.searchWrapper button :hover {
+  transition: all 1s ease-out;
+  color: aquamarine;
 }
 
 @media only screen and (max-width: 600px) {
