@@ -22,7 +22,12 @@ const Slider = ({ hits }) => {
   };
 
   if (hits.length === 0) {
-    return <h1>Loading...</h1>;
+    return (
+      <h1>
+        Looks like something wrong with keyword. Try again with something
+        different
+      </h1>
+    );
   } else {
     return (
       <>

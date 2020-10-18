@@ -105,6 +105,7 @@ img {
   background-color: #2b2d2e;
   outline: none;
   color: #bbb;
+  padding: 0.5rem;
 }
 .searchWrapper input::placeholder {
   padding: 0.5rem;
@@ -117,11 +118,40 @@ img {
   position: absolute;
   background-color: #2b2d2e;
   right: 0.25rem;
+  margin-top: 0.5rem;
 }
 
 .searchWrapper button :hover {
   transition: all 1s ease-out;
   color: aquamarine;
+}
+
+.lds-dual-ring {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -151,8 +181,15 @@ img {
     object-fit: cover;
     flex: 1;
   }
+  .dotWrapper {
+    display: none;
+  }
 
   .checkBoxWrapper {
     display: none;
+  }
+  .searchWrapper {
+    left: 30%;
+    top: 90%;
   }
 }
