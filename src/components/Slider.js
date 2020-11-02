@@ -45,10 +45,10 @@ const Slider = ({ hits }) => {
 
         <div className="btnWrapper">
           <button className="leftBtn" onClick={goLeft}>
-            <i className="fas fa-angle-double-left"></i>
+            &lt;&lt;
           </button>
           <button className="rightBtn" onClick={goRight}>
-            <i className="fas fa-angle-double-right"></i>
+            &gt;&gt;
           </button>
         </div>
         <hr />
