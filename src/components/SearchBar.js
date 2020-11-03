@@ -21,9 +21,7 @@ const SearchBar = ({ handleChange, handleClick, handleKeyPressed }) => {
           onChange={change}
           onKeyPress={keyPressed}
         />
-        <button onClick={click}>
-          <i className="fas fa-search"></i>
-        </button>
+        <button onClick={click} />
       </div>
     </>
   );

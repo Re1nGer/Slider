@@ -4,6 +4,9 @@ import "../styles/style.css";
 const Slider = ({ hits }) => {
   const [x, setX] = useState(0);
   const [isFullScreen, setIsFullScreen] = useState(true);
+  const [xPointUp, setXPointUp] = useState(0);
+  const [xPointDown, setXPointDown] = useState(0);
+  const [dragging, setDragging] = useState(false);
 
   const styles = {
     objectFit: "contain",
@@ -17,8 +20,29 @@ const Slider = ({ hits }) => {
     x === -100 * (hits.length - 1) ? setX(0) : setX(x - 100);
   };
 
-  const handleClick = () => {
+  const setFullSize = () => {
     setIsFullScreen(!isFullScreen);
+  };
+
+  const handleMouseUp = (event) => {
+    setXPointUp(event.clientX);
+    setDragging(false);
+  };
+
+  const handleMouseMove = (event) => {
+    if (dragging) {
+      if (xPointDown - event.clientX > 0) {
+        goRight();
+      } else if (xPointDown - event.clientX < 0) {
+        goLeft();
+      }
+      setDragging(false);
+    }
+  };
+
+  const handleMouseDown = (event) => {
+    setXPointDown(event.clientX);
+    setDragging(true);
   };
 
   if (hits.length === 0) {
@@ -31,7 +55,15 @@ const Slider = ({ hits }) => {
   } else {
     return (
       <>
-        <div className="slider">
+        <div
+          className="slider"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+        >
+          <div style={{ transform: `translateX(${x}%)` }} className="slide">
+            <h1>Test with random html element</h1>
+          </div>
           {hits.map((url, idx) => (
             <div
               key={idx}
@@ -60,7 +92,7 @@ const Slider = ({ hits }) => {
         </div>
 
         <div className="checkBoxWrapper">
-          <input onClick={handleClick} type="checkbox" />
+          <input onClick={setFullSize} type="checkbox" />
           <label>Full Screen Mode</label>
         </div>
       </>
